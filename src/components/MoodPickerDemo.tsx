@@ -37,10 +37,45 @@ function MoodPickerDemo(): JSX.Element {
     );
   };
 
+  const handleMoodChangeToSleepy = () => {
+    const nextMood = "sleepy";
+    queueRerenderWithNewMoodValue(nextMood);
+    console.log(
+      "😴 queued a rerender with mood as",
+      nextMood,
+      "but in this render it is still",
+      moodValueFromCurrentRender
+    )
+  };
+
+  const handleMoodChangeToSurprised = () => {
+    const nextMood = "surprised";
+    queueRerenderWithNewMoodValue(nextMood);
+    console.log("🤭 queued a rerender with mood as",
+    nextMood,
+    "but in this render it is still",
+    moodValueFromCurrentRender
+    )
+  };
+
+  const handleMoodChangeToAngry = () => {
+    const nextMood = "angry";
+    queueRerenderWithNewMoodValue(nextMood);
+    console.log("😡 queued a rerender with mood as",
+    nextMood,
+    "but in this render it is still",
+    moodValueFromCurrentRender
+    )
+  }
+
   console.log(
     "Component is rendering with a mood value of",
     moodValueFromCurrentRender
   );
+
+
+
+
 
   return (
     <>
@@ -49,6 +84,9 @@ function MoodPickerDemo(): JSX.Element {
       <button onClick={handleMoodChangeToHappy}>😀</button>
       <button onClick={handleMoodChangeToConfused}>🤔</button>
       <button onClick={handleMoodChangeToSad}>😢</button>
+      <button onClick={handleMoodChangeToSleepy}>😴</button>
+      <button onClick={handleMoodChangeToSurprised}>🤭</button>
+      <button onClick={handleMoodChangeToAngry}>😡</button>
     </>
   );
 }
